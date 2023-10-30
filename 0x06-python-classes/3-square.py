@@ -1,33 +1,18 @@
 #!/usr/bin/python3
-"""
-No module imported
-"""
+"""Class Square that defines a square"""
 
 
 class Square:
-    """
-    Private instance attribute size
-    public instance method
-    """
+    """Special method: __init__"""
     def __init__(self, size=0):
-        """
-        private instance attribute
-        parameters
-        ------------------
-        size : integer else TypError
-        if size less than 0, raise value error
-        """
+        """Private instance attribute: self.__size"""
         self.__size = size
-        try:
-            assert type(size) == int
-        except:
+
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
 
+    """public instance  method area"""
     def area(self):
-        """
-        public instance method
-        returns the current square area
-        """
         return self.__size ** 2
